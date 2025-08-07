@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+
+int main(){
+     int h,m,sec;
+    char t[3];
+    scanf("%d:%d:%d%s",&h,&m,&sec,t);
+   if(strcmp(t,"AM") == 0 && h == 12) 
+    {
+    printf("00:%.2d:%.2d",m,sec);
+    }
+    else if(strcmp(t,"AM") == 0)
+    {
+      printf("%.2d:%.2d:%.2d",h,m,sec);   
+    }
+    else if(strcmp(t,"PM") == 0 && h != 12) 
+    {h += 12;
+        printf("%.2d:%.2d:%.2d",h,m,sec); 
+    }
+    else if(strcmp(t,"PM") == 0 && h == 12)
+    {
+        printf("%.2d:%.2d:%.2d",h,m,sec); 
+    }
+     
+    return 0;
+}
